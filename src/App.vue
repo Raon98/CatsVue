@@ -1,14 +1,13 @@
 <template>
-  <Main></Main>
+  <router-link to="/"></router-link>
+  <router-view/>
 </template>
 
 <script>
-import Main from './components/chap1.vue'
-
 export default {
   name: 'App',
   components: {
-    Main
+
   }
 }
 </script>
