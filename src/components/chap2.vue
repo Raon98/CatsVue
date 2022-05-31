@@ -4,6 +4,7 @@
 <div>
   <div>
     <p>{{count}}</p>
+    <p>{{recycle}}</p>
     <button @click="increment"> 카운트 하기</button>
   </div>
 </div>
@@ -34,8 +35,14 @@ export default {
   methods :{
     increment() {
       this.count = this.count += 1
+      setTimeout(()=>{this.count++},1000)
+      setTimeout(this.callback,1000)
     }
-
+  },
+  computed:{
+    recycle() {
+      return this.count> 10 ? '10이상' : '10이하'
+    }
   }
 
 }
