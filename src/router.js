@@ -8,11 +8,6 @@ const routes = [
         component: () => import('@/components/chap1'), // 동적 import
     },
     {
-        path: '/chap1',
-        name: 'chap1',
-        component: () => import('@/components/chap1'), // 동적 import
-    },
-    {
         path: '/chap2',
         name: 'chap2',
         component: () => import('@/components/chap2'), // 동적 import
