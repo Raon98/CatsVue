@@ -12,14 +12,17 @@
 
 <script>
 import { computed } from "vue";
-import { useStore } from "vuex";
-
+// import { useStore } from "vuex";
+// import {useRoute} from "vue-router";
+import {cheol} from "@/plugins/cheol";
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "chap3",
   setup() {
+    const {store, router} = cheol()
     //모듈로 분리해서 사용
-    const store = useStore();
+    // const store = useStore();
+    // const route = useRoute();
     // state는 namespaced 유무와 상관 없이 moduleName으로 쪼개서 들어간다.
     const counter = computed(() => store.state.counter.counter);
     const count = computed(()=> store.state.moduleA.count);
@@ -31,7 +34,7 @@ export default {
     const inc = () => store.commit("setCounter", counter.value + 1);
     const inc1 = () => store.commit("moduleA/increment", count.value + 1);
     console.log(inc)
-    return { inc,inc1, test ,doubleCount , counter};
+    return { inc,inc1, test ,doubleCount , counter,store,router};
   }
 
     // 기본형으로 Store사용
