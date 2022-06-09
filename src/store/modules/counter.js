@@ -1,5 +1,5 @@
-// store/modules/Counter.js
-export const Counter = {
+// store/modules/counter.js
+export const counter = {
     namespace : true,
     state: () => ({ counter: 0 }),
     mutations: {
@@ -14,6 +14,10 @@ export const Counter = {
     },
     getters: {
         time2(state) {
+            return state.counter * 2;
+        },
+        // eslint-disable-next-line no-unused-vars
+        doubleCount(state, getters, rootState) {
             return state.counter * 2;
         }
     }

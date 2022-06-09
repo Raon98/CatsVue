@@ -1,10 +1,10 @@
 import {createStore} from "vuex";
-import { Counter } from "@/store/modules/Counter";
+import { counter } from "@/store/modules/counter";
 import { moduleA } from "@/store/modules/moduleA";
 
 export default createStore({
     //모듈로 분리형
-    modules: { Counter, moduleA }
+    modules: {  moduleA,counter }
 
     //하나로 사용
     // count state 속성 추가

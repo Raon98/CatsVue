@@ -4,8 +4,8 @@ export const moduleA = {
         count: 0,
     }),
     mutations: {
-        increment(state) {
-            state.count++;
+        increment(state, value) {
+            state.count = value;
         }
     },
     getters: {
