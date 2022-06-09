@@ -19,7 +19,7 @@ import { ref } from "vue";
 const useVales = () => {
   const message = ref('hello Vue.js');
   const list = ref(['사과','바나나','딸기']);
-  const inputdata = ref("");
+  const inputdata = ref("disiindiat");
   return { message , list , inputdata}
 }
 
