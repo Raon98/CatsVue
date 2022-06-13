@@ -1,6 +1,7 @@
 <template>
   <div id="simple">
         <h1> Store Ex</h1>
+    {{store.getters.setCompanyData}}
 
     {{counter}}
     {{ test }}
@@ -20,6 +21,18 @@ export default {
   name: "chap3",
   setup() {
     const {store, router} = cheol()
+
+    const info = computed(()=> store.state.infoData.userData);
+
+    console.log("======================================================")
+    console.log("info 데이터 값 : " + JSON.stringify(info.value));
+    console.log("======================================================")
+
+    const infoData = computed(()=>store.getters["setCompanyData"])
+    console.log("======================================================")
+    console.log("infoData 데이터 값 : " + infoData.value);
+    console.log("======================================================")
+
     //모듈로 분리해서 사용
     // const store = useStore();
     // const route = useRoute();
@@ -34,10 +47,33 @@ export default {
     const inc = () => store.commit("setCounter", counter.value + 1);
     const inc1 = () => store.commit("moduleA/increment", count.value + 1);
     console.log(inc)
-    return { inc,inc1, test ,doubleCount , counter,store,router};
-  }
 
-    // 기본형으로 Store사용
+
+    return { inc,inc1, test ,doubleCount , counter,store,router};
+
+
+  },
+  // axios EX
+  // mounted() {
+  //
+  //   this.$axios.get("http://jsonplaceholder.typicode.com/posts")
+  //       .then(res => {
+  //         console.log("======================================================")
+  //         console.log("response 데이터 값 : " + JSON.stringify(res.data));
+  //         console.log("======================================================")
+  //       })
+  //       .catch(error => {
+  //         console.log("======================================================")
+  //         console.log("error 메세지 : " + error.data);
+  //         console.log("======================================================")
+  //       })
+  //       .finally(() => {
+  //         console.log("======================================================")
+  //         console.log("무조건 실행");
+  //         console.log("======================================================")
+  //       })
+  // }
+  // 기본형으로 Store사용
     // const store = useStore();
     // const counter = computed(() => store.state.counter);
     // const test = computed(() => store.getters);
