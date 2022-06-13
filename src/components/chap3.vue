@@ -19,7 +19,7 @@ export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "chap3",
   setup() {
-    const {store, router } = cheol()
+    const {store, router} = cheol()
     //모듈로 분리해서 사용
     // const store = useStore();
     // const route = useRoute();
@@ -41,12 +41,7 @@ export default {
 
   },
   mounted() {
-    console.log("");
-    console.log("[MainComponent] : [mounted] : [start]");
-    console.log("설 명 : DOM 렌더링 완료");
-    console.log("");
 
-    // [axios http 요청 수행 실시]
     this.$axios.get("http://jsonplaceholder.typicode.com/posts")
         .then(res => {
           console.log("======================================================")
