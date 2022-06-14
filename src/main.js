@@ -10,8 +10,10 @@ app.config.productionTip =false
 
 
 const emitter = mitts();
-app.config.globalProperties.$emitter = emitter;
+app.config.globalProperties.emitter = emitter;
 
-app.use(router).use(store).use(global).use(emitter)
+app.provide('emitter', emitter);
+
+app.use(router).use(store).use(global)
 app.config.globalProperties.$axios = axios;
 app.mount('#app')

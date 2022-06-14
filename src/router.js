@@ -27,6 +27,16 @@ const routes = [
         component: loadView('chap4'), // 동적 import
     },
     {
+        path: '/chap5',
+        name: 'chap5',
+        component: loadView('chap5'), // 동적 import
+    },
+    {
+        path: '/chap6',
+        name: 'chap6',
+        component: loadView('chap6'), // 동적 import
+    },
+    {
         path: '/axiosEx',
         name: 'axiosEx',
         component: loadView('axiosEx'), // 동적 import
