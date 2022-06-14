@@ -10,11 +10,14 @@
   <input type="text" v-model="inputdata" placeholder="여기를 수정하세요">
   <p v-if="showEx" v-bind="showEx">{{message2}}</p>
   <button @click="del" v-if="showEx">show</button>
+  <chap5></chap5>
+  <chap6></chap6>
 </template>
 
 <script>
 import { ref } from "vue";
-
+import Chap5 from "@/components/chap5";
+import Chap6 from "@/components/chap6";
 
 const useVales = () => {
   const message = ref('hello Vue.js');
@@ -26,6 +29,7 @@ const useVales = () => {
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "chap1",
+  components: {Chap5 , Chap6},
   data()  {
     return{
       showEx :true,
