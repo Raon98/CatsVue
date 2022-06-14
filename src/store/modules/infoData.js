@@ -4,32 +4,28 @@ export const infoData = {
     state: () => ({
         change : 12,
         userData: {
-            id: void 0,
-            password: void 0,
-            name: void 0,
+            id: '',
+            password: '',
+            name: {},
             age: 30,
             job: 'programmer'
         },
     }),
 
     mutations: {
-        initData(state) {
-            state.userList = []
-            state.isFlag = false
-            state.userData = {
-                id: void 0,
-                password: void 0,
-                name: void 0,
-                age: 30,
-                job: 'programmer'
-            }
+        setId(state,payload){
+            state.userData.id = payload;
+        },
+        setPassword(state,payload){
+            state.userData.password = payload;
+        },
+        setName(state,payload){
+            state.userData.name = payload;
         },
     },
     getters: {
         setCompanyData: (state) =>{
-            state.userData.age = state.change
-           return state.userData.age
-
+           return state.userData
         }
     }
 }
