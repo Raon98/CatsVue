@@ -1,12 +1,16 @@
 <template>
-  <p> 콜백함수를 통해 처음 Index 반환 : {{findIndex}}</p>
-  <p> 다차원 배열 내의 요소를 출력 :  {{flatten}}</p>
-  <p> 배열 안 요소들의 값들을 비교하고 분석 : {{evens}}</p>
-  <p> 배열안에 요소값 비교 : {{every}}</p>
-  <p> 조건을 만족하는 첫번째 요소 : </p> <p>{{find}}</p>
-  <p> 특정 조건을 만족하는 모든 요소를 추출하는 필터1 : </p> <p>{{find}}</p>
-  <p> 특정 조건을 만족하는 모든 요소를 추출하는 필터2 : </p> <p>{{find}}</p>
-  <p> 계산 결과 배열함수를 실행하고 그 결과를 배열로 반환 : {{mapEx}}</p>
+  <p> lodash EX 입니다.</p>
+  <p> findIndex : {{findIndex}}</p>
+  <p> flatten :  {{flatten}}</p>
+  <p> evens : {{evens}}</p>
+  <p> every : {{every}}</p>
+  <p> find : {{find}}</p>
+  <p> filter1 : {{filter1}}</p>
+  <p> filter2 : {{filter2}}</p>
+  <p> map : {{mapEx}}</p>
+  <p> forEach : {{forEachEx}}</p>
+  <p> include : {{include}}</p>
+  <p> reduce : {{reduce}}</p>
 </template>
 
 <script>
@@ -75,6 +79,19 @@ export default {
     const mapEx = _.map(myFriend3,'name');
     //_.map([1,2],timesTwo); //->[3,6]
 
+    //배열의 값마다 함수를 실행시킬 때 용이하게 사용됩니다.
+    const forEachEx = _.forEach({ 'a': 1, 'b': 2 }, function(n, key) {
+    console.log(n, key);
+  });
+    // _([1, 2]).forEach(function(n) {console.log(n);}).value();
+
+    //해당 collection에 target값이 있는지 판별
+    const include = _.includes({ 'name': 'yhs', 'age': 26 }, 'yhs');
+
+    //첫번째 인자에 대해 배열 내부의 값을 통해 콜백함수를 실행시킨 후 결과값을 반환
+    const reduce = _.reduce([1, 2], function(total, n) {
+      return total + n;
+    });
       return {store,
               router,
               findIndex,
@@ -84,12 +101,12 @@ export default {
               find,
               filter1,
               filter2,
-              mapEx
-
+              mapEx,
+              include,
+              reduce,
+              forEachEx,
       }
   },
-
-
 }
 </script>
 
