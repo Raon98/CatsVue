@@ -2,8 +2,8 @@
   <div id="simple">
         <h1> Store Ex</h1>
     <p> Name : {{info.name.laon.name}} </p>
-    <p> ID : {{info.id}} </p>
-    <p> Password : {{info.password[1]}} </p>
+    <p> ID : {{info.id[1]}} </p>
+    <p> Password : {{info.password}} </p>
     <p> AGE : {{info.age}} </p>
     <p> JOB {{info.job}}</p>
 
@@ -62,9 +62,7 @@ export default {
     // console.log("======================================================")
     // console.log("name 데이터 값 : " + sung);
     // console.log("======================================================")
-    //모듈로 분리해서 사용
-    // const store = useStore();
-    // const route = useRoute();
+
     // state는 namespaced 유무와 상관 없이 moduleName으로 쪼개서 들어간다.
     // const counter = computed(() => store.state.counter.counter);
     // const count = computed(()=> store.state.moduleA.count);
