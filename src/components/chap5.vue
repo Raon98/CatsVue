@@ -36,17 +36,21 @@ export default {
         payload.men.check = false;
         user.value.spName = payload.men.spName
         user.value.nic = payload.men.nic
+
         console.log("변경실행중")
         payload.girl.check = true;
+
         console.log('sibling 남자 오브젝트 값 : ', `value : ${JSON.stringify(payload.men)}`)
         console.log('sibling 여자 오브젝트 값 : ', `value : ${JSON.stringify(payload.girl)}`)
-      // } else if (payload.girl.check === true){
-      //     payload.girl.check = false;
-      //     user.value.spName = payload.girl.spName
-      //     user.value.nic = payload.girl.nic
-      //   payload.men.check = true;
-      //     console.log('sibling 남자 오브젝트 값 : ' , `value : ${JSON.stringify(payload.men)}`)
-      //     console.log('sibling 여자 오브젝트 값 : ' , `value : ${JSON.stringify(payload.girl)}`)
+      }
+        // else if (payload.girl.check === true){
+        //   payload.girl.check = false;
+        //   user.value.spName = payload.girl.spName
+        //   user.value.nic = payload.girl.nic
+        //   payload.men.check = true;
+        //
+        //   console.log('sibling 남자 오브젝트 값 : ' , `value : ${JSON.stringify(payload.men)}`)
+        //   console.log('sibling 여자 오브젝트 값 : ' , `value : ${JSON.stringify(payload.girl)}`)
 
         // watch(payload.men.check === true,
         //     ()=>user.value.spName = payload.men.spName,
@@ -55,11 +59,8 @@ export default {
         watch(payload.girl.check === true,
             ()=>user.value.spName = payload.men.spName,user.value.nic = payload.men.nic
             ,user.value.spName = payload.girl.spName, user.value.nic = payload.girl.nic)
-      }
-
-
+      //}
       // }
-
     }))
     // emitter.on('sibling',(val1)=>{
     //   user.value.name = val1[0]

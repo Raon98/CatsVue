@@ -12,13 +12,14 @@
   <button @click="del" v-if="showEx">show</button>
   <chap5></chap5>
   <chap6></chap6>
+  <SwiperCarousel />
 </template>
 
 <script>
 import { ref } from "vue";
 import Chap5 from "@/components/chap5";
 import Chap6 from "@/components/chap6";
-
+import chap7 from "@/components/chap7";
 const useVales = () => {
   const message = ref('hello Vue.js');
   const list = ref(['사과','바나나','딸기']);
@@ -29,7 +30,9 @@ const useVales = () => {
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "chap1",
-  components: {Chap5 , Chap6},
+  components: {Chap5 , Chap6,
+    SwiperCarousel: chap7,
+    },
   data()  {
     return{
       showEx :true,
