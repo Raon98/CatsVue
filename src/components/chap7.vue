@@ -1,10 +1,28 @@
 <template>
-  <swiper :effect="'cards'" :grabCursor="true">
-    <swiper-slide v-for="n in 7" :key="n"> {{ n }} </swiper-slide>
-  </swiper>
+  <div>
+    <swiper
+        :effect="'cards'"
+        :grabCursor="true"
+        :modules="modules"
+        :slides-per-view="1.2"
+        :space-between="50"
+        navigation
+        :pagination="{ clickable: true }"
+        :scrollbar="{ draggable: true }"
+        @swiper="onSwiper"
+        @slideChange="onSlideChange"
+    >
+      <swiper-slide v-for="n in 7" :key="n"> {{ n }} </swiper-slide>
+    </swiper>
+  </div>
+  <p>슬라이스쇼 </p>
+
 </template>
 
 <script>
+
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 import SwiperCore, { EffectCards } from "swiper";
@@ -18,13 +36,27 @@ export default {
     Swiper,
     SwiperSlide,
   },
+  setup() {
+    const onSwiper = (swiper) => {
+      console.log(swiper);
+    };
+    const onSlideChange = () => {
+      console.log('slide change');
+    };
+    return {
+      onSwiper,
+      onSlideChange,
+      modules: [Navigation, Pagination, Scrollbar, A11y],
+    };
+  },
 };
 </script>
 
 <style scoped>
 .swiper {
-  width: 240px;
+  width: 300px;
   height: 320px;
+  margin-right: 5px;
 }
 .swiper-slide {
   display: flex;
