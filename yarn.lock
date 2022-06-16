@@ -2791,7 +2791,7 @@
     "domhandler" "^4.2.0"
     "entities" "^2.0.0"
 
-"dom7@^4.0.4":
+"dom7@^4.0.2":
   "integrity" "sha512-DSSgBzQ4rJWQp1u6o+3FVwMNnT5bzQbMb+o31TjYYeRi05uAcpF8koxdfzeoe5ElzPmua7W7N28YJhF7iEKqIw=="
   "resolved" "https://registry.npmjs.org/dom7/-/dom7-4.0.4.tgz"
   "version" "4.0.4"
@@ -5700,12 +5700,12 @@
     "picocolors" "^1.0.0"
     "stable" "^0.1.8"
 
-"swiper@^8.2.4":
-  "integrity" "sha512-TPq64KiZUt8lZY5ZEg75RjToT+RwfLomfKIpcFLy6+UCUp2kL7hHWslLxjFtcFeiwfG67RHFYbJnq6tsothcJQ=="
-  "resolved" "https://registry.npmjs.org/swiper/-/swiper-8.2.4.tgz"
-  "version" "8.2.4"
+"swiper@^7.4.1":
+  "integrity" "sha512-dhbL4tpYFvHug1J7GnKElfTi6EYhlZy/vNZRhHkWFyUsWZ1Vovipxj3la5gqllMogygXJMe3zvVv+f6eppvWiA=="
+  "resolved" "https://registry.npmjs.org/swiper/-/swiper-7.4.1.tgz"
+  "version" "7.4.1"
   dependencies:
-    "dom7" "^4.0.4"
+    "dom7" "^4.0.2"
     "ssr-window" "^4.0.2"
 
 "table@^6.0.9":
